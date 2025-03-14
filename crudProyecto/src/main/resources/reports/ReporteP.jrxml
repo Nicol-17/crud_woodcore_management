@@ -1,0 +1,101 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="ReporteP" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0c28cedc-98d9-4c8c-86ba-d59160a8253a">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQLConnection"/>
+	<query language="SQL"><![CDATA[select * from proyecto_f]]></query>
+	<field name="id_proyecto" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id_proyecto"/>
+		<property name="com.jaspersoft.studio.field.label" value="id_proyecto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proyecto_f"/>
+	</field>
+	<field name="nombre_proyecto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_proyecto"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_proyecto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proyecto_f"/>
+	</field>
+	<field name="prioridad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="prioridad"/>
+		<property name="com.jaspersoft.studio.field.label" value="prioridad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proyecto_f"/>
+	</field>
+	<field name="sprint_inicio" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="sprint_inicio"/>
+		<property name="com.jaspersoft.studio.field.label" value="sprint_inicio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proyecto_f"/>
+	</field>
+	<field name="sprint_final" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="sprint_final"/>
+		<property name="com.jaspersoft.studio.field.label" value="sprint_final"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proyecto_f"/>
+	</field>
+	<field name="encargado_proyecto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="encargado_proyecto"/>
+		<property name="com.jaspersoft.studio.field.label" value="encargado_proyecto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proyecto_f"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="85" splitType="Stretch">
+		<element kind="staticText" uuid="90aa34f0-38bd-4263-bc7d-a8ee03815bb6" x="40" y="20" width="350" height="30" fontName="Californian FB" fontSize="19.0">
+			<text><![CDATA[WOODCORE MANAGEMENT]]></text>
+		</element>
+		<element kind="staticText" uuid="d01ca175-0b64-42d4-94c4-5813e081c796" x="394" y="10" width="150" height="30" fontSize="12.0">
+			<text><![CDATA[Fecha y hora de impresion:]]></text>
+		</element>
+		<element kind="textField" uuid="87f0ffeb-233b-41f8-b10b-cc4cc97d106c" x="380" y="50" width="100" height="30" pattern="MMMMM dd, yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="textField" uuid="78b97ad5-6c6a-40f4-9c09-0a5b409509bd" x="480" y="50" width="100" height="30" pattern="HH:mm">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</title>
+	<pageHeader height="65" splitType="Stretch">
+		<element kind="line" uuid="e8b65b8e-9545-44f8-8e7a-6f6c6d93e302" x="20" y="-2" width="520" height="4">
+			<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</element>
+		<element kind="staticText" uuid="26594fb7-9c62-4be5-aa98-bdc116c8ef14" x="210" y="20" width="209" height="30" fontName="Californian FB" fontSize="16.0">
+			<text><![CDATA[Reporte Proyectos]]></text>
+		</element>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="0c19f723-5fb7-4ddc-92f1-a313b6d9cd1b" x="0" y="40" width="50" height="30">
+				<expression><![CDATA[$F{id_proyecto}]]></expression>
+			</element>
+			<element kind="staticText" uuid="99f9b20b-d9ce-441e-b742-5eea362e9920" x="0" y="10" width="50" height="30">
+				<text><![CDATA[id]]></text>
+			</element>
+			<element kind="textField" uuid="10d71e24-2cf4-4fb4-9809-8282b77fe454" x="50" y="40" width="100" height="30">
+				<expression><![CDATA[$F{nombre_proyecto}]]></expression>
+			</element>
+			<element kind="staticText" uuid="89a727b8-a470-405c-bb91-7882743aa5f7" x="50" y="10" width="100" height="30">
+				<text><![CDATA[Nombre proyecto:]]></text>
+			</element>
+			<element kind="textField" uuid="2b11a217-8b77-4963-a2a5-b4db6feea8d4" x="150" y="40" width="100" height="30">
+				<expression><![CDATA[$F{prioridad}]]></expression>
+			</element>
+			<element kind="staticText" uuid="a2511224-e7b8-4113-bf18-eadcb6ed36b1" x="150" y="10" width="100" height="30">
+				<text><![CDATA[Prioridad:]]></text>
+			</element>
+			<element kind="textField" uuid="a41ed4d9-d616-4190-9624-29e5a00ee7a2" x="250" y="40" width="100" height="30">
+				<expression><![CDATA[$F{sprint_inicio}]]></expression>
+			</element>
+			<element kind="staticText" uuid="f685645a-67e7-47c6-89d7-fcdd29dc4714" x="250" y="10" width="100" height="30">
+				<text><![CDATA[Sprint inicio:]]></text>
+			</element>
+			<element kind="textField" uuid="2a0c226d-1934-4574-bc05-f254211ad27f" x="350" y="40" width="100" height="30">
+				<expression><![CDATA[$F{sprint_final}]]></expression>
+			</element>
+			<element kind="staticText" uuid="ed4bf008-7331-4731-8396-a0e445ee9236" x="350" y="10" width="100" height="30">
+				<text><![CDATA[Sprint final:]]></text>
+			</element>
+			<element kind="textField" uuid="de3651c7-a94b-49f0-bd7e-2405d3a3f8e0" x="450" y="40" width="100" height="30">
+				<expression><![CDATA[$F{encargado_proyecto}]]></expression>
+			</element>
+			<element kind="staticText" uuid="e47af43f-f058-4930-8aed-e99c475cebb7" x="450" y="10" width="100" height="30">
+				<text><![CDATA[Encargado proyecto:]]></text>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="54" splitType="Stretch"/>
+</jasperReport>

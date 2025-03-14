@@ -23,7 +23,7 @@ public class ReportController {
     @GetMapping("/report")
     public ResponseEntity<byte[]> generarReporte(){
         try{
-            byte[] report = reportService.generarReport("Reporte");
+            byte[] report = reportService.generarReport("ReporteP");
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_PDF);
             headers.add("Content-Disposition", "inline; filename=report.pdf");

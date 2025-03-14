@@ -65,4 +65,3 @@ public class ProjectService {
                 .orElseThrow(() -> new RuntimeException("Proyecto no encontrado"));
     }
 }
-

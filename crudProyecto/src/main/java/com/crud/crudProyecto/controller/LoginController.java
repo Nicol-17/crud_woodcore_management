@@ -20,21 +20,21 @@ public class LoginController {
         CrudUsuario usuario = crudusuarioRepository.findByCorreo(login.getCorreo());
 
         if (usuario != null && usuario.getContraseña().equals(login.getContraseña())) {
-            return ResponseEntity.ok(
-                    java.util.Map.of(
-                            "success", true,
-                            "message", "Login exitoso. Bienvenido " + usuario.getNombre_usuario()
-                    )
-            );
+            return ResponseEntity.ok().body(java.util.Map.of(
+                    "success", true,
+                    "id", usuario.getId(),
+                    "nombre", usuario.getNombre_usuario(),
+                    "correo", usuario.getCorreo(),
+                    "message", "Login exitoso. Bienvenido " + usuario.getNombre_usuario()
+            ));
         } else {
-            return ResponseEntity.status(401).body(
-                    java.util.Map.of(
-                            "success", false,
-                            "message", "Credenciales inválidas."
-                    )
-            );
+            return ResponseEntity.status(401).body(java.util.Map.of(
+                    "success", false,
+                    "message", "Credenciales inválidas."
+            ));
         }
     }
+
 
 }
 

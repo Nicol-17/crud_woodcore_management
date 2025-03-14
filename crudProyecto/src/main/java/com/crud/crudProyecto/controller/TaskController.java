@@ -23,7 +23,7 @@ public class TaskController {
     private ProjectService projectService;
 
     @Data
-    public class TaskRequest {
+    public static class TaskRequest {
         private TaskEntity taskEntity;
         private Long idProyecto;
     }
@@ -55,14 +55,28 @@ public class TaskController {
         TaskEntity taskEntity = taskRequest.getTaskEntity();
         Long idProyecto = taskRequest.getIdProyecto();
 
+        // 🔍 Verificar si el ID del proyecto está llegando
+        System.out.println("ID Proyecto recibido: " + idProyecto);
+
+        if (idProyecto == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: idProyecto es nulo.");
+        }
+
         ProjectEntity project = projectService.getById(idProyecto);
         if (project == null) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Proyecto no encontrado");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: Proyecto no encontrado.");
         }
+
+        // Asignar el proyecto a la tarea
         taskEntity.setProyecto(project);
         taskService.create(taskEntity);
+
+        System.out.println("Tarea creada con ID: " + taskEntity.getTarea_id());
+
         return ResponseEntity.status(HttpStatus.CREATED).body("Tarea creada exitosamente");
     }
+
+
 
     // Método PUT para actualizar una tarea existente
     @PutMapping("/tasks/{id}")
